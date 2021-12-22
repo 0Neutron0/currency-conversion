@@ -1,0 +1,105 @@
+.modal-calendar{
+    display: none;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #ccc;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+}
+
+.modal-calendar--open{
+    display: grid;
+    place-content: center center;
+}
+
+.react-calendar__tile--active{
+    background-color: #08807f;
+}
+
+.react-calendar__tile--active:enabled:hover, 
+.react-calendar__tile--active:enabled:focus{
+    background-color: #148686;
+}
+
+.cocoon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.base-currency{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.3), 0 0 0 2px rgba(34, 60, 80, 0.1);
+}
+
+.base-currency__column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 5px;
+}
+
+.base-currency__flag{
+    height: 80px;
+    width: auto;
+    border: 1px solid #ccc;
+}
+
+.base-currency__title{
+    text-align: center;
+    width: 100%;
+    color: #383c3f;
+}
+
+.base-currency__sub-title{
+    font-weight: bold;
+}
+
+.base-currency__name{
+    color: #383c3f;
+    font-size: small;
+    white-space: pre-line;
+}
+
+.base-currency__description{
+    color: #aaa;
+    text-align: center;
+    width: 100%;
+    font-size: small;
+}
+
+.calendar-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, rgb(21, 156, 162), rgb(6, 129, 127));
+    box-shadow: 5px 5px 7px -5px rgba(34, 60, 80, 0.9);
+    border-radius: 3px;
+    padding: 10px 20px;
+    max-width: 200px;
+    cursor: pointer;
+}
+
+.calendar-btn__date{
+    color: #fff;
+    font-size: 20px;
+    padding-right: 10px;
+    border-right: 2px solid #fff;
+}
+
+.calendar-btn__icon{
+    height: 25px;
+    width: 25px;
+    margin-left: 10px;
+    background-image: url(/src/images/icon/calendar.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
