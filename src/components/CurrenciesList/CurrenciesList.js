@@ -12,11 +12,11 @@ const CurrenciesList = () => {
     };
 
     const currenciesReducer = useSelector(state => state.currenciesReducer);
-    const curKeys = Object.keys(currenciesReducer.currencies);
+    const currenciesKeys = Object.keys(currenciesReducer.currencies);
 
-    const getCurrencis = (currencies, curKeys) => {
+    const getCurrencis = (currencies, currenciesKeys) => {
         return(
-            curKeys.map(item => <div 
+            currenciesKeys.map(item => <div 
                     className="currencies-list__item" 
                     key={item}
                     onClick={() => changeCurrency(item)}
@@ -26,7 +26,7 @@ const CurrenciesList = () => {
                 >
                     <img  
                         className = "currencies-list__flag-img"
-                        src = {"/images/flags/" + item.toLowerCase() + ".png"} 
+                        src = {window.location.origin + "/images/flags/" + item.toLowerCase() + ".png"} 
                         alt = {item} 
                     />
                 </div>
@@ -47,7 +47,7 @@ const CurrenciesList = () => {
 
     return(
         <div className="currencies-list">
-            { getCurrencis(currenciesReducer.currencies, curKeys) }
+            { getCurrencis(currenciesReducer.currencies, currenciesKeys) }
         </div>
     )
 };

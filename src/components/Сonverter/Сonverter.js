@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { changeFirstCode, changeSecondCode, changeFirstValue, changeSecondValue } from "../../redux/actions/actions";
 import { CurrencySelect } from "../CurrencySelect/CurrencySelect";
@@ -6,11 +6,6 @@ import { CURRENCIES_NAME } from "../currencyName";
 import "./Converter.css";
 
 const Converter = () => {
-    let rrr = useRef(0);
-    rrr.current++;
-    console.log('rrr:',rrr.current);
-
-
     const dispatch = useDispatch();
 
     const currency = useSelector(state => state.converterReducer);
@@ -72,7 +67,7 @@ const Converter = () => {
                         <div className="converter__flag">
                             <img 
                                 className="converter__img"
-                                src={"/images/flags/" + currency.firstCurrencyCode.toLowerCase() + ".png"}
+                                src={window.location.origin + "/images/flags/" + currency.firstCurrencyCode.toLowerCase() + ".png"}
                                 alt="fl"
                             />
                         </div>
@@ -104,7 +99,7 @@ const Converter = () => {
                         <div className="converter__flag">
                             <img 
                                 className="converter__img"
-                                src={"/images/flags/" + currency.secondCurrencyCode.toLowerCase() + ".png"}
+                                src={window.location.origin + "/images/flags/" + currency.secondCurrencyCode.toLowerCase() + ".png"}
                                 alt={currency.secondCurrencyCode.toLowerCase()}
                             />
                         </div>

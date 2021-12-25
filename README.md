@@ -8,5 +8,8 @@ Pet-проект.
 Получить новый демо ключ можно зарегистрировавшись бесплатно [тут](https://app.exchangerate-api.com/sign-up/29). 
 
 
+Используемые технологии: JavaScript-библиотека React (react-app) и библиотека Redux (state manager), Redux-saga.
+
+
 [Демонстрационная страница работы приложения](https://0Neutron0.github.io/currency-conversion/ "Кликни на меня :)")
 

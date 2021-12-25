@@ -1,4 +1,3 @@
-import React, { useRef } from 'react';
 import { useSelector } from "react-redux";
 import { Routes, Route} from 'react-router';
 import { Layout } from './components/Layout/Layout';
@@ -10,9 +9,6 @@ import { Error } from './pages/Error';
 import './App.css';
 
 function App() {
-  let sss = useRef(0);
-    sss.current++;
-    console.log('sss:',sss.current);
   const newError = useSelector(state => state.errorReducer);
   if(!newError.flag){
     return (

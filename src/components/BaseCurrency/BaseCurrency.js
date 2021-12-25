@@ -37,7 +37,7 @@ const BaseCurrency = () => {
                     <div className="base-currency__column">
                         <img
                             className="base-currency__flag"
-                            src={"/images/flags/" + currenciesReducer.base.toLowerCase() + ".png"}
+                            src={window.location.origin + "/images/flags/" + currenciesReducer.base.toLowerCase() + ".png"}
                             alt={currenciesReducer.base}  
                         />
                     </div>

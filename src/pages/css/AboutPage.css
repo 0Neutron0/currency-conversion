@@ -1,0 +1,27 @@
+.about-info{
+    padding: 0 20px;
+}
+
+.about-info__logo{
+    display: block;
+    margin: 0 auto 20px auto;
+    height: 120px;
+    width: 120px;
+}
+
+.adout-info__text{
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #ccc;
+    box-shadow: 0px 5px 10px 2px rgb(34 60 80 / 20%) inset;
+}
+
+.about-info__indent{
+    padding: 10px 0;
+}
+
+.about-info__link{
+    color: #08807f;
+}

@@ -1,28 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { CURRENCIES_NAME } from "../currencyName";
 
 const CurrencySelect = ({choiceCurrency}) => {
 
     const currenciesReducer = useSelector(state => state.currenciesReducer);
-    console.log('currenciesReducer:', currenciesReducer.currencies);
-    const curKeys = Object.keys(currenciesReducer.currencies);
-    console.log('curKeys:', curKeys);
     const [stateCurrentKeys, setCurrentKeys] = useState([]);
-    //setCurrentKeys([...curKeys]);
-    console.log('stateCurrentKeys:', stateCurrentKeys);
+    const currentKeys = useRef(null);
+    useEffect(() => {
+        currentKeys.current = Object.keys(currenciesReducer.currencies);
+        setCurrentKeys(currentKeys.current);
+    }, [currenciesReducer.currencies]);
 
-    // useEffect((curKeys) => {
-    //     setCurrentKeys([...curKeys]);
-    // }, [currenciesReducer.currencies]);
-
-    const filtrCurrentKeys = (event, [...keys]) => {
+    const filtrCurrentKeys = (event) => {
         const value = event.currentTarget.value.toUpperCase().trim();
-        console.log(value);
         if(value){
-            setCurrentKeys(keys.filter(key => key.includes(value)));
+            setCurrentKeys([...currentKeys.current.filter(key => key.includes(value))]);
         }else{
-            setCurrentKeys(keys);
+            setCurrentKeys([...currentKeys.current]);
         }
     };
 
@@ -35,7 +30,7 @@ const CurrencySelect = ({choiceCurrency}) => {
                     >
                     <div className="converter-select__flag" >
                         <img className="converter-select__img"
-                                src={"/images/flags/" + item.toLowerCase() + ".png"}
+                                src={window.location.origin + "/images/flags/" + item.toLowerCase() + ".png"}
                                 alt={item}
                         />
                     </div>
@@ -52,7 +47,7 @@ const CurrencySelect = ({choiceCurrency}) => {
         <div className="converter-select">
         <input 
             className="converter-select__filtr"
-            onChange={event => filtrCurrentKeys(event, curKeys)}
+            onChange={event => filtrCurrentKeys(event)}
             placeholder="Введите код валюты"
         />
         <div className="converter-select__items">
