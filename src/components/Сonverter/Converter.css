@@ -99,3 +99,14 @@
     background-color: #fff;
     overflow-x: hidden;
 }
+
+@media(max-width: 765px){
+    .converter__currency{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .converter__part{
+        width: 90%;
+    }
+}

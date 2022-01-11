@@ -104,3 +104,11 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+@media(max-width: 765px){
+    .base-currency{
+        width: 70%;
+        flex-direction: column;
+        align-items: center;
+    }
+}

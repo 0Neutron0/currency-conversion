@@ -2,11 +2,11 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 30px 0;
+  padding: 30px 16px;
 }
 
 .error{
-  min-width: 642px;
+  width: 642px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -31,4 +31,10 @@
   box-shadow: 5px 5px 7px -5px rgba(34, 60, 80, 0.9);
   margin-top: 20px;
   cursor: pointer;
+}
+
+@media(max-width: 765px){
+  .error{
+    width: 90%;
+  }
 }
