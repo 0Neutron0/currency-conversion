@@ -1,3 +1,3 @@
 export const API_KEY = {
-    TOKEN: '023b3c9145daedda3a756d13' // Ключь достука к сервису https://app.exchangerate-api.com/
+    TOKEN: '5211d2b02c0bc38168f4a144' // Ключь достука к сервису https://app.exchangerate-api.com/
 };

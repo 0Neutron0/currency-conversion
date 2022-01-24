@@ -7,7 +7,9 @@ const CurrencySelect = ({choiceCurrency}) => {
 
     const currenciesReducer = useSelector(state => state.currenciesReducer);
     const [stateCurrentKeys, setCurrentKeys] = useState([]);
+    const [stateInput, setStateInput] = useState('');
     const currentKeys = useRef(null);
+
     useEffect(() => {
         currentKeys.current = Object.keys(currenciesReducer.currencies);
         setCurrentKeys(currentKeys.current);
@@ -15,11 +17,17 @@ const CurrencySelect = ({choiceCurrency}) => {
 
     const filtrCurrentKeys = (event) => {
         const value = event.currentTarget.value.toUpperCase().trim();
+        setStateInput(value);
         if(value){
             setCurrentKeys([...currentKeys.current.filter(key => key.includes(value))]);
         }else{
             setCurrentKeys([...currentKeys.current]);
         }
+    };
+
+    const cleaner = () => {
+        setStateInput('');
+        setCurrentKeys([...currentKeys.current]);
     };
 
     const gerAllList = () => {
@@ -53,15 +61,23 @@ const CurrencySelect = ({choiceCurrency}) => {
 
     return(
         <div className="converter-select">
-        <input 
-            className="converter-select__filtr"
-            onChange={event => filtrCurrentKeys(event)}
-            placeholder="Введите код валюты"
-        />
-        <div className="converter-select__items">
-            {gerAllList()}
+            <div className="converter-select__input">
+                <input 
+                    className="converter-select__filtr"
+                    onChange={event => filtrCurrentKeys(event)}
+                    placeholder="Введите код валюты"
+                    value={stateInput}
+                />
+                <div className="converter-select__input-cleaner"
+                    onClick={cleaner}
+                ></div>
+            </div>
+            <div className="converter-select__lnist">
+                <div className="converter-select__items">
+                    {gerAllList()}
+                </div>
+            </div>
         </div>
-    </div>
     )
 };
 

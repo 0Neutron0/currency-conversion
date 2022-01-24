@@ -27,7 +27,7 @@ function App() {
     return (
       <div className="App">
       <Routes>
-        <Route path="/" element={<Error info={newError.text} />} />
+        <Route path="/currency-conversion/" element={<Error info={newError.text} />} />
       </Routes>
       </div>
     );

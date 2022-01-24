@@ -1,6 +1,32 @@
+.converter-select{
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+}
+
+.converter-select__input{
+    display: flex;
+    flex-direction: row;
+}
+
+.converter-select__input-cleaner{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #aaa;
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+    border-radius: 5px;
+    background-image: url('../../images/icon/clear.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .converter-select__filtr{
     width: 100%;
     height: 35px;
+    position: relative;
     text-align: center;
     background-color: #aaa;
     border-radius: 5px;
@@ -13,6 +39,12 @@
 }
 .converter-select__filtr::placeholder{
     text-transform: lowercase;
+}
+
+.converter-select__list{
+    width: 100%;
+    height: 265px;
+    overflow-x: hidden;
 }
 
 .converter-select__items{
