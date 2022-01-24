@@ -17,13 +17,13 @@ const BaseCurrency = () => {
         setDateState(newDate);
         const date = {
             year: newDate.getFullYear(), 
-            month: newDate.getMonth(), 
+            month: (newDate.getMonth() + 1), 
             day: newDate.getDate()
         };
         dispatch(setDateCurrencis(date));
         changeOpenState('modal-calendar');
     };
-
+    
     const openCalendar = () => {
         changeOpenState('modal-calendar modal-calendar--open');
     };
@@ -63,7 +63,7 @@ const BaseCurrency = () => {
             </div>
             <div className={openState}>
                 <Calendar
-                    minDate={new Date(2018, 0, 1)}
+                    minDate={new Date(2018, 1, 1)}
                     maxDate={new Date()}
                     onChange={changeDate}
                     value={dateState}

@@ -32,7 +32,7 @@ const Converter = () => {
         if(+value > 0){
             dispatch(changeFirstValue(value));
         }else{
-            dispatch(changeFirstValue('1'));
+            dispatch(changeFirstValue(''));
         }
         
     };
@@ -42,7 +42,7 @@ const Converter = () => {
         if(+value > 0){
             dispatch(changeSecondValue(value));
         }else{
-            dispatch(changeSecondValue('1'));
+            dispatch(changeSecondValue(''));
         }
     };
 
