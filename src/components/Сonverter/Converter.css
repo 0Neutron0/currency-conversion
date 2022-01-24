@@ -102,4 +102,8 @@
     .converter__part{
         width: 90%;
     }
+
+    .converter__list{
+        width: 100%;
+    }
 }

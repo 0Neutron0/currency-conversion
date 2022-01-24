@@ -72,7 +72,7 @@ const CurrencySelect = ({choiceCurrency}) => {
                     onClick={cleaner}
                 ></div>
             </div>
-            <div className="converter-select__lnist">
+            <div className="converter-select__list">
                 <div className="converter-select__items">
                     {gerAllList()}
                 </div>
